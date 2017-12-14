@@ -2,15 +2,27 @@ const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const extractSass = new ExtractTextPlugin({
 	filename: "[name].css",
 });
 
+const pugGenerator = function (path) {
+	return new HtmlWebpackPlugin(
+		{
+			template: './resources/views/' + path + '.pug',
+			filename: './' + path + '.html',
+			inject: true
+		}
+	)
+};
+
 module.exports = [{
 	entry: './resources/assets/js/app.js',
 	output: {
-		filename: 'bundle.js',
-		path: path.join(__dirname, 'public/assets/js')
+		path: path.join(__dirname, 'public/'),
+		filename: './assets/js/bundle.js',
 	},
 	module: {
 		rules: [{
@@ -31,26 +43,27 @@ module.exports = [{
 		// 		drop_console: true
 		// 	},
 		// }),
-		new ExtractTextPlugin('[name].css'),
 		new webpack.ProvidePlugin({
 			$: 'jquery'
 		}),
-		new CopyWebpackPlugin([
+		new CopyWebpackPlugin([//,icons,images
 			{
 				from: './resources/assets/icons',
-				to: '../icons'
+				to: './assets/icons'
 			},
 			{
 				from: './resources/assets/images',
-				to: '../images',
+				to: './assets/images',
 			}
 		], {
 			ignore: [{
 				glob: './resources/assets/_**/*', dot: false
 			}],
-		})
+		}),
+		pugGenerator('index'),
+		pugGenerator('login/index'),
 	],
-}, {
+}, {//css
 	entry: {
 		style: './resources/assets/scss/style.scss',
 	},
