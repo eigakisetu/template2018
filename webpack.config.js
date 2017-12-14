@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractSass = new ExtractTextPlugin({
 	filename: "[name].css",
@@ -34,6 +35,20 @@ module.exports = [{
 		new webpack.ProvidePlugin({
 			$: 'jquery'
 		}),
+		new CopyWebpackPlugin([
+			{
+				from: './resources/assets/icons',
+				to: '../icons'
+			},
+			{
+				from: './resources/assets/images',
+				to: '../images',
+			}
+		], {
+			ignore: [{
+				glob: './resources/assets/_**/*', dot: false
+			}],
+		})
 	],
 }, {
 	entry: {
