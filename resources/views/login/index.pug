@@ -1,4 +1,4 @@
-extends _include/_layout.pug
+extends ../_include/_layout.pug
 block title
     title= 'サンプル株式会社'
 block meta
@@ -10,9 +10,9 @@ block meta
     meta(property='og:type', content='website')
     meta(property='og:image', content='http://xxx.xx.xx/xx_1500x1500.png')
 block body
-    include  _include/_header.pug
+    include  ../_include/_header.pug
     .container
-        p ほげ
+        p ログイン
         p グリッドシステム(横一列で12カラム そのうちいくつ使うかを選択する)
         .row(style='margin-bottom:20px;')
             .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
@@ -125,4 +125,4 @@ block body
                         div(style='background: #ccc; padding: 15px 0;') col-xs-6
                     .col-xs-6(style='background: #e6e6e6;border:1px solid #ccc;')
                         div(style='background: #ccc; padding: 15px 0;') col-xs-6
-    include _include/_footer.pug
+    include ../_include/_footer.pug

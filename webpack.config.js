@@ -25,16 +25,21 @@ module.exports = [{
 		filename: './assets/js/bundle.js',
 	},
 	module: {
-		rules: [{
-			test: /\.js$/,
-			exclude: /node_modules/,
-			use: [{
-				loader: 'babel-loader',
-				options: {
-					presets: ['env']
-				}
-			}],
-		}],
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: [{
+					loader: 'babel-loader',
+					options: {
+						presets: ['env']
+					}
+				}],
+			},
+			{
+				test: /\.pug$/,
+				loader: 'pug-loader'
+			},],
 	},
 	plugins: [
 		// new webpack.optimize.UglifyJsPlugin({
