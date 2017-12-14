@@ -1,0 +1,128 @@
+extends _include/_layout.pug
+block title
+    title= 'サンプル株式会社'
+block meta
+    meta(name='description', content='')
+    meta(name='keywords', content='')
+    meta(property='og:title', content='')
+    meta(property='og:description', content='')
+    meta(property='og:site_name', content='')
+    meta(property='og:type', content='website')
+    meta(property='og:image', content='http://xxx.xx.xx/xx_1500x1500.png')
+block body
+    include  _include/_header.pug
+    .container
+        p ほげ
+        p グリッドシステム(横一列で12カラム そのうちいくつ使うかを選択する)
+        .row(style='margin-bottom:20px;')
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+            .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-1
+        .row(style='margin-bottom:20px;')
+            .col-xs-8(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-8
+            .col-xs-4(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-4
+        .row(style='margin-bottom:20px;')
+            .col-xs-4.col-xs-6(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-4
+            .col-xs-4.col-xs-6(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-4
+            .col-xs-4.col-xs-6(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-4
+        .row(style='margin-bottom:20px;')
+            .col-xs-3(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-3
+            .col-xs-3(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-3
+            .col-xs-3(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-3
+            .col-xs-3(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-3
+        .row(style='margin-bottom:20px;')
+            .col-xs-6(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-6
+            .col-xs-6(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-6
+        .row(style='margin-bottom:20px;')
+            .col-xs-9(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-9 メインコンテンツ幅
+            .col-xs-3(style='background: #e6e6e6;border:1px solid #ccc;')
+                div(style='background: #ccc; padding: 15px 0;') col-xs-3 サイドバー幅
+
+            .col-xs-9(style='margin:50px 0 20px;')
+                p メインコンテンツの中のグリッドシステム
+                p メインコンテンツ幅は全体の9カラム(サイドバー3カラム)。9カラムの中で再び12分割されてグリッドシステムを使用できる。
+                .row(style='margin-bottom:20px;')
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                    .col-xs-1(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-1
+                .row(style='margin-bottom:20px;')
+                    .col-xs-8(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-8
+                    .col-xs-4(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-4
+                .row(style='margin-bottom:20px;')
+                    .col-xs-4.col-xs-6(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-4
+                    .col-xs-4.col-xs-6(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-4
+                    .col-xs-4.col-xs-6(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-4
+                .row(style='margin-bottom:20px;')
+                    .col-xs-3(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-3
+                    .col-xs-3(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-3
+                    .col-xs-3(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-3
+                    .col-xs-3(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-3
+                .row(style='margin-bottom:20px;')
+                    .col-xs-6(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-6
+                    .col-xs-6(style='background: #e6e6e6;border:1px solid #ccc;')
+                        div(style='background: #ccc; padding: 15px 0;') col-xs-6
+    include _include/_footer.pug
