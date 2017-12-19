@@ -73,8 +73,6 @@ module.exports = [{
 		pugGenerator('index'),
 		pugGenerator('login/index'),
 		new BrowserSyncPlugin({
-			// browse to http://localhost:3000/ during development,
-			// ./public directory is being served
 			host: 'localhost',
 			port: 3000,
 			server: {baseDir: ['public']}
@@ -91,9 +89,18 @@ module.exports = [{
 	module: {
 		rules: [
 			{
-				test: /\.(css|scss)$/,
+				test: /\.(scss)$/,
 				use: ExtractTextPlugin.extract({
-					use: ["css-loader", "postcss-loader", "sass-loader"]
+					use: [
+						{
+							loader: 'css-loader',
+							options: {
+								minimize: true
+							}
+						},
+						"postcss-loader",
+						"sass-loader"
+					]
 				})
 			}
 		]
