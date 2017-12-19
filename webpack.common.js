@@ -42,17 +42,15 @@ module.exports = [{
 				}],
 			},
 			{
+				test: /\.css$/,
+				loader: 'style-loader!css-loader!postcss-loader'
+			},
+			{
 				test: /\.pug$/,
 				loader: 'pug-loader'
 			},],
 	},
 	plugins: [
-		// new webpack.optimize.UglifyJsPlugin({
-		// 	compress: {
-		// 		// console.log（）などのconsole.*系の記述を取り除いて出力する
-		// 		drop_console: true
-		// 	},
-		// }),
 		new webpack.ProvidePlugin({
 			$: 'jquery'
 		}),
@@ -77,7 +75,7 @@ module.exports = [{
 			// ./public directory is being served
 			host: 'localhost',
 			port: 3000,
-			server: { baseDir: ['public'] }
+			server: {baseDir: ['public']}
 		})
 	],
 }, {//css
