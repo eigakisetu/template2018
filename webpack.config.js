@@ -3,6 +3,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
 	filename: "[name].css",
@@ -19,6 +20,10 @@ const pugGenerator = function (path) {
 };
 
 module.exports = [{
+	devServer: {
+		contentBase: 'public',
+		port: 3000
+	},
 	entry: './resources/assets/js/app.js',
 	output: {
 		path: path.join(__dirname, 'public/'),
@@ -67,6 +72,13 @@ module.exports = [{
 		}),
 		pugGenerator('index'),
 		pugGenerator('login/index'),
+		new BrowserSyncPlugin({
+			// browse to http://localhost:3000/ during development,
+			// ./public directory is being served
+			host: 'localhost',
+			port: 3000,
+			server: { baseDir: ['public'] }
+		})
 	],
 }, {//css
 	entry: {
