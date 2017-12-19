@@ -4,6 +4,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const autoprefixer = require("autoprefixer");
+const precss = require("precss");
 
 const extractSass = new ExtractTextPlugin({
 	filename: "[name].css",
@@ -78,27 +80,25 @@ module.exports = [{
 			server: {baseDir: ['public']}
 		})
 	],
-}, {//css
+}, {
 	entry: {
-		style: './resources/assets/scss/style.scss',
+		style: path.join(__dirname, "resources/assets/scss/style.scss")
 	},
 	output: {
 		path: path.join(__dirname, 'public/assets/css'),
 		filename: '[name].css'
 	},
 	module: {
-		rules: [{
-			test: /\.scss$/,
-			use: extractSass.extract({
-				use: [{
-					loader: "css-loader"
-				}, {
-					loader: "sass-loader"
-				}],
-			})
-		}]
+		rules: [
+			{
+				test: /\.(css|scss)$/,
+				use: ExtractTextPlugin.extract({
+					use: ["css-loader", "postcss-loader", "sass-loader"]
+				})
+			}
+		]
 	},
 	plugins: [
-		extractSass
+		new ExtractTextPlugin('[name].css'),
 	]
 }];

@@ -20,9 +20,9 @@
 @import "layout/_main";
 @import "layout/_sidebar";
 
-body{
-  background: url("https://placehold.jp/150x200.png");
-  display: none;
-  transform: translate(50%,50%);
-  display: flex;
+
+body {
+  :fullscreen a {
+    display: flex
+  }
 }
