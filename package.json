@@ -4,7 +4,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "dev": "webpack --config webpack.common.js",
+    "dev": "webpack --config  webpack.config.js",
     "watch": "webpack --watch",
     "prod": "webpack --config webpack.prod.js"
   },

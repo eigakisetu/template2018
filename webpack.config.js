@@ -7,10 +7,6 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const autoprefixer = require("autoprefixer");
 const precss = require("precss");
 
-const extractSass = new ExtractTextPlugin({
-	filename: "[name].css",
-});
-
 const pugGenerator = function (path) {
 	return new HtmlWebpackPlugin(
 		{
@@ -95,7 +91,7 @@ module.exports = [{
 						{
 							loader: 'css-loader',
 							options: {
-								minimize: true
+								minimize: false
 							}
 						},
 						"postcss-loader",
